@@ -1,0 +1,822 @@
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study
+$ git init
+Initialized empty Git repository in D:/github_git/git_study/.git/
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ vim hello.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hello.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git add hello.txt
+warning: LF will be replaced by CRLF in hello.txt.
+The file will have its original line endings in your working directory
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   hello.txt
+
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git commit hello.txt
+warning: LF will be replaced by CRLF in hello.txt.
+The file will have its original line endings in your working directory
+[master (root-commit) 266d9ae] my first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ vim hello.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git add hello.txt
+warning: LF will be replaced by CRLF in hello.txt.
+The file will have its original line endings in your working directory
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   hello.txt
+
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git commit -m "my second commit" hello.txt
+warning: LF will be replaced by CRLF in hello.txt.
+The file will have its original line endings in your working directory
+[master 8b70244] my second commit
+ 1 file changed, 3 insertions(+)
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git log
+commit 8b702447a7ae648eaad7c2551bab872f6ffe8a58 (HEAD -> master)
+Author: Hu <hhdong61@163.com>
+Date:   Tue Apr 12 11:48:23 2022 +0800
+
+    my second commit
+
+commit 266d9ae1f71694bd047e78aa18df0636ef6541e5
+Author: Hu <hhdong61@163.com>
+Date:   Tue Apr 12 11:38:52 2022 +0800
+
+    my first commit
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git log --pretty = oneline
+fatal: ambiguous argument '=': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git log --pretty=oneline
+8b702447a7ae648eaad7c2551bab872f6ffe8a58 (HEAD -> master) my second commit
+266d9ae1f71694bd047e78aa18df0636ef6541e5 my first commit
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git log --oneline
+8b70244 (HEAD -> master) my second commit
+266d9ae my first commit
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git reflog
+8b70244 (HEAD -> master) HEAD@{0}: commit: my second commit
+266d9ae HEAD@{1}: commit (initial): my first commit
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ vim xhx.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        xhx.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git add xhx.txt
+warning: LF will be replaced by CRLF in xhx.txt.
+The file will have its original line endings in your working directory
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git commit -m "commit xhx.txt"xhx.txt
+[master 45a9ca1] commit xhx.txtxhx.txt
+ 1 file changed, 4 insertions(+)
+ create mode 100644 xhx.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ rm xhx.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    xhx.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git add xhx.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git commit -m "zhaohui"xhx.txt
+[master 7afd1d5] zhaohuixhx.txt
+ 1 file changed, 4 deletions(-)
+ delete mode 100644 xhx.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git reflog
+7afd1d5 (HEAD -> master) HEAD@{0}: commit: zhaohuixhx.txt
+45a9ca1 HEAD@{1}: commit: commit xhx.txtxhx.txt
+8b70244 HEAD@{2}: commit: my second commit
+266d9ae HEAD@{3}: commit (initial): my first commit
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ ll
+total 1
+-rw-r--r-- 1 75247 197609 20 Apr 12 11:45 hello.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git reset --hard 45a9ca1
+HEAD is now at 45a9ca1 commit xhx.txtxhx.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git reflog
+45a9ca1 (HEAD -> master) HEAD@{0}: reset: moving to 45a9ca1
+7afd1d5 HEAD@{1}: commit: zhaohuixhx.txt
+45a9ca1 (HEAD -> master) HEAD@{2}: commit: commit xhx.txtxhx.txt
+8b70244 HEAD@{3}: commit: my second commit
+266d9ae HEAD@{4}: commit (initial): my first commit
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ ll
+total 2
+-rw-r--r-- 1 75247 197609 20 Apr 12 11:45 hello.txt
+-rw-r--r-- 1 75247 197609 21 Apr 12 15:08 xhx.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ vim bbb.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bbb.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git add bbb.txt
+warning: LF will be replaced by CRLF in bbb.txt.
+The file will have its original line endings in your working directory
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git commit -m "new bbb.txt"bbb.txt
+[master e2947ee] new bbb.txtbbb.txt
+ 1 file changed, 5 insertions(+)
+ create mode 100644 bbb.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git reflog
+e2947ee (HEAD -> master) HEAD@{0}: commit: new bbb.txtbbb.txt
+45a9ca1 HEAD@{1}: reset: moving to 45a9ca1
+7afd1d5 HEAD@{2}: commit: zhaohuixhx.txt
+45a9ca1 HEAD@{3}: commit: commit xhx.txtxhx.txt
+8b70244 HEAD@{4}: commit: my second commit
+266d9ae HEAD@{5}: commit (initial): my first commit
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ vim aaa.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git add aaa.txt
+warning: LF will be replaced by CRLF in aaa.txt.
+The file will have its original line endings in your working directory
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git commit -m "new aaa.txt" aaa.txt
+warning: LF will be replaced by CRLF in aaa.txt.
+The file will have its original line endings in your working directory
+[master f283141] new aaa.txt
+ 1 file changed, 2 insertions(+)
+ create mode 100644 aaa.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git reflog
+f283141 (HEAD -> master) HEAD@{0}: commit: new aaa.txt
+e2947ee HEAD@{1}: commit: new bbb.txtbbb.txt
+45a9ca1 HEAD@{2}: reset: moving to 45a9ca1
+7afd1d5 HEAD@{3}: commit: zhaohuixhx.txt
+45a9ca1 HEAD@{4}: commit: commit xhx.txtxhx.txt
+8b70244 HEAD@{5}: commit: my second commit
+266d9ae HEAD@{6}: commit (initial): my first commit
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ ll
+total 4
+-rw-r--r-- 1 75247 197609 12 Apr 12 15:14 aaa.txt
+-rw-r--r-- 1 75247 197609  9 Apr 12 15:11 bbb.txt
+-rw-r--r-- 1 75247 197609 20 Apr 12 11:45 hello.txt
+-rw-r--r-- 1 75247 197609 21 Apr 12 15:08 xhx.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ cat xhx.txt
+you
+son
+of
+bitch
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ cat hello.txt
+wangrr
+xhx
+hhd
+miss
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ vim hello.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git differ hello.txt
+git: 'differ' is not a git command. See 'git --help'.
+
+The most similar command is
+        diff-tree
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git diff hello.txt
+warning: LF will be replaced by CRLF in hello.txt.
+The file will have its original line endings in your working directory
+diff --git a/hello.txt b/hello.txt
+index ed12f8a..c949747 100644
+--- a/hello.txt
++++ b/hello.txt
+@@ -1,4 +1,4 @@
+ wangrr
+ xhx
+ hhd
+-miss
++miss you so much
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git add hello.txt
+warning: LF will be replaced by CRLF in hello.txt.
+The file will have its original line endings in your working directory
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git diff hello.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git diff HEAD hello.txt
+diff --git a/hello.txt b/hello.txt
+index ed12f8a..c949747 100644
+--- a/hello.txt
++++ b/hello.txt
+@@ -1,4 +1,4 @@
+ wangrr
+ xhx
+ hhd
+-miss
++miss you so much
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git branch -v
+* master f283141 new aaa.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git branch hot_fix
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git branch -v
+  hot_fix f283141 new aaa.txt
+* master  f283141 new aaa.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git checkout hot_fix
+Switched to branch 'hot_fix'
+M       hello.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ git branch -v
+* hot_fix f283141 new aaa.txt
+  master  f283141 new aaa.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ ll
+total 4
+-rw-r--r-- 1 75247 197609 12 Apr 12 15:14 aaa.txt
+-rw-r--r-- 1 75247 197609  9 Apr 12 15:11 bbb.txt
+-rw-r--r-- 1 75247 197609 32 Apr 12 15:22 hello.txt
+-rw-r--r-- 1 75247 197609 21 Apr 12 15:08 xhx.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ vim aaa.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ git add aaa.txt
+warning: LF will be replaced by CRLF in aaa.txt.
+The file will have its original line endings in your working directory
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ git commit -m "test branch hot_fix" aaa.txt
+warning: LF will be replaced by CRLF in aaa.txt.
+The file will have its original line endings in your working directory
+[hot_fix 4528da7] test branch hot_fix
+ 1 file changed, 1 insertion(+)
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ git branch -v
+* hot_fix 4528da7 test branch hot_fix
+  master  f283141 new aaa.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ git checkout master
+Switched to branch 'master'
+M       hello.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git branch -v
+  hot_fix 4528da7 test branch hot_fix
+* master  f283141 new aaa.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git merge hot_fix
+Updating f283141..4528da7
+Fast-forward
+ aaa.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git branch -v
+  hot_fix 4528da7 test branch hot_fix
+* master  4528da7 test branch hot_fix
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ ll
+total 4
+-rw-r--r-- 1 75247 197609 37 Apr 12 16:31 aaa.txt
+-rw-r--r-- 1 75247 197609  9 Apr 12 15:11 bbb.txt
+-rw-r--r-- 1 75247 197609 32 Apr 12 15:22 hello.txt
+-rw-r--r-- 1 75247 197609 21 Apr 12 15:08 xhx.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ cat hello.txt
+wangrr
+xhx
+hhd
+miss you so much
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ vim hello.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git add hello.txt
+warning: LF will be replaced by CRLF in hello.txt.
+The file will have its original line endings in your working directory
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git commit -m "test conflict" hello.txt
+warning: LF will be replaced by CRLF in hello.txt.
+The file will have its original line endings in your working directory
+[master 3c6d0ba] test conflict
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (master)
+$ git checkout hot_fix
+Switched to branch 'hot_fix'
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ ll
+total 4
+-rw-r--r-- 1 75247 197609 37 Apr 12 16:31 aaa.txt
+-rw-r--r-- 1 75247 197609  9 Apr 12 15:11 bbb.txt
+-rw-r--r-- 1 75247 197609 24 Apr 12 16:47 hello.txt
+-rw-r--r-- 1 75247 197609 21 Apr 12 15:08 xhx.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ cat hello.txt
+wangrr
+xhx
+hhd
+miss
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ vim hello.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ git add hello.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ git commit -m "text conflict hot_fix" hello.txt
+[hot_fix b4fdd16] text conflict hot_fix
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ git status
+On branch hot_fix
+nothing to commit, working tree clean
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ git merge master
+Auto-merging hello.txt
+CONFLICT (content): Merge conflict in hello.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix|MERGING)
+$ vim hello.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix|MERGING)
+$ git status
+On branch hot_fix
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   hello.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix|MERGING)
+$ git add hello.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix|MERGING)
+$ git commit -m "resolve conflict" hello.txt
+fatal: cannot do a partial commit during a merge.
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix|MERGING)
+$ git commit -m "resolve conflict"
+[hot_fix 97f215a] resolve conflict
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ git status
+On branch hot_fix
+nothing to commit, working tree clean
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/git_study (hot_fix)
+$ cd ..
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git
+$ git init
+Initialized empty Git repository in D:/github_git/.git/
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git (master)
+$ vim houston.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git (master)
+$ mkdir houston
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git (master)
+$ cd /houston
+bash: cd: /houston: No such file or directory
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git (master)
+$ pwd
+/d/github_git
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git (master)
+$ cd..
+bash: cd..: command not found
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git (master)
+$ cd ..
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d
+$ cd /d/github_git
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git (master)
+$ cd /d/github_git/houston
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston (master)
+$ mkdir huojian
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston (master)
+$ cd
+
+75247@LAPTOP-3QFK1R4M MINGW64 ~
+$ cd huojian/
+bash: cd: huojian/: No such file or directory
+
+75247@LAPTOP-3QFK1R4M MINGW64 ~
+$ cd /d/github_git/houston/huojian/
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ git init
+Initialized empty Git repository in D:/github_git/houston/huojian/.git/
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ vim huojian.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ git add huojian.txt
+warning: LF will be replaced by CRLF in huojian.txt.
+The file will have its original line endings in your working directory
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ git commit -m "test github" huojian.txt
+warning: LF will be replaced by CRLF in huojian.txt.
+The file will have its original line endings in your working directory
+[master (root-commit) c21c8b1] test github
+ 1 file changed, 1 insertion(+)
+ create mode 100644 huojian.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ git remote -v
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ git remote add origin https://github.com/askledjf/huojian.git
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ git remote -v
+origin  https://github.com/askledjf/huojian.git (fetch)
+origin  https://github.com/askledjf/huojian.git (push)
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ git push origin masterfatal: 发送请求时出错。
+fatal: 无法连接到远程服务器
+fatal: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 20
+      0 [sig] bash 2567! sigpacket::process: Suppressing signal 18 to win32 proc
+
+                                                                                567! sigpacket::process: Suppressing signal 18 to win32 process (pid 48324)
+                                                                           32906
+                                                                                ess: Suppressing signal 18 to win32 process (pid 48324)
+                      remote: Support for password authentication was removed on
+remote: Please see https://github.blog/2020-12-15-token-authentication-requireme
+fatal: Authentication failed for 'https://github.com/askledjf/huojian.git/'
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 228 bytes | 228.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/askledjf/huojian.git
+ * [new branch]      master -> master
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ cd ..
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston (master)
+$ mkdir huojian2022
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston (master)
+$ cd huojian2022/
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022 (master)
+$ git clone https://github.com/askledjf/huojian.git
+Cloning into 'huojian'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022 (master)
+$ ll
+total 0
+drwxr-xr-x 1 75247 197609 0 Apr 12 19:52 huojian/
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022 (master)
+$ cd huojian/
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022/huojian (master)
+$ ls -la
+total 5
+drwxr-xr-x 1 75247 197609  0 Apr 12 19:52 ./
+drwxr-xr-x 1 75247 197609  0 Apr 12 19:52 ../
+drwxr-xr-x 1 75247 197609  0 Apr 12 19:52 .git/
+-rw-r--r-- 1 75247 197609 22 Apr 12 19:52 huojian.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022/huojian (master)
+$ git remote -v
+origin  https://github.com/askledjf/huojian.git (fetch)
+origin  https://github.com/askledjf/huojian.git (push)
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022/huojian (master)
+$ vim huojian.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022/huojian (master)
+$ git add huojian.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022/huojian (master)
+$ git commit -m "test push" huojian.txt
+[master 89081be] test push
+ 1 file changed, 1 insertion(+)
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022/huojian (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 290 bytes | 290.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/askledjf/huojian.git
+   c21c8b1..89081be  master -> master
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022/huojian (master)
+$
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022/huojian (master)
+$ pwd
+/d/github_git/houston/huojian2022/huojian
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022/huojian (master)
+$ cd ../../huojian
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ ll
+total 1
+-rw-r--r-- 1 75247 197609 21 Apr 12 19:18 huojian.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ cat huojian.txt
+哈登+保罗+戈登
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ git fetch origin master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 270 bytes | 33.00 KiB/s, done.
+From https://github.com/askledjf/huojian
+ * branch            master     -> FETCH_HEAD
+   c21c8b1..89081be  master     -> origin/master
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ cat huojian.txt
+哈登+保罗+戈登
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ git checkout origin/master
+Note: switching to 'origin/master'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 89081be test push
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian ((89081be...))
+$ cat huojian.txt
+哈登+保罗+戈登
+格林+克里斯托弗+神经
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian ((89081be...))
+$ git checkout master
+Previous HEAD position was 89081be test push
+Switched to branch 'master'
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ git merge origin/master
+Updating c21c8b1..89081be
+Fast-forward
+ huojian.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ cat huojian.txt
+哈登+保罗+戈登
+格林+克里斯托弗+神经
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ cd ../huojian2022/huojian/
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022/huojian (master)
+$ vim huojian.txt
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022/huojian (master)
+$ git commit -m "test huojian pull" huojian.txt
+[master 3c5aeff] test huojian pull
+ 1 file changed, 1 insertion(+)
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022/huojian (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 301 bytes | 301.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/askledjf/huojian.git
+   89081be..3c5aeff  master -> master
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian2022/huojian (master)
+$ cd ../../huojian/
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ cat huojian.txt
+哈登+保罗+戈登
+格林+克里斯托弗+神经
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ git pull origin master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 281 bytes | 28.00 KiB/s, done.
+From https://github.com/askledjf/huojian
+ * branch            master     -> FETCH_HEAD
+   89081be..3c5aeff  master     -> origin/master
+Updating 89081be..3c5aeff
+Fast-forward
+ huojian.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ cat huojian.txt
+哈登+保罗+戈登
+格林+克里斯托弗+神经
+切特
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$ ssh -T git@github.com
+Hi askledjf! You've successfully authenticated, but GitHub does not provide shell access.
+
+75247@LAPTOP-3QFK1R4M MINGW64 /d/github_git/houston/huojian (master)
+$
